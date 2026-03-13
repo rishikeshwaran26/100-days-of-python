@@ -5,3 +5,4 @@ split=int(input("How many people to split bill"))
 each_split=((tot_bill+tip)/split)
 print(f"The split for each person is {each_split}")
 
+
