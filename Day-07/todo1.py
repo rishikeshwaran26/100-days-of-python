@@ -1,64 +1,22 @@
 import random
-import hangmanwords
-stages = [r'''
-  +---+
-  |   |
-  O   |
- /|\  |
- / \  |
-      |
-=========
-''', r'''
-  +---+
-  |   |
-  O   |
- /|\  |
- /    |
-      |
-=========
-''', r'''
-  +---+
-  |   |
-  O   |
- /|\  |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
- /|   |
-      |
-      |
-=========''', '''
-  +---+
-  |   |
-  O   |
-  |   |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-  O   |
-      |
-      |
-      |
-=========
-''', '''
-  +---+
-  |   |
-      |
-      |
-      |
-      |
-=========
-''']
+from hangmanwords import a
+from stages import stages,logo
 lives=5
 
-word=random.choice(hangmanwords.a)
+logo = r'''
+ _                                             
+| |                                            
+| |__   __ _ _ __   __ _ _ __ ___   __ _ _ __  
+| '_ \ / _` | '_ \ / _` | '_ ` _ \ / _` | '_ \ 
+| | | | (_| | | | | (_| | | | | | | (_| | | | |
+|_| |_|\__,_|_| |_|\__, |_| |_| |_|\__,_|_| |_|
+                    __/ |                      
+                   |___/                       
+'''
+
+print(logo)
+
+word=random.choice(a)
 print(word)
 placeholder=""
 for i in word:
@@ -68,7 +26,9 @@ gameover=False
 correctletter=[]
 while not gameover:
     guess=input("Enter the guess word:").lower()
-   
+    if guess in correctletter:
+        print(f"You have already guessed this letter: {guess}")
+        
     display=""
     for i in word:
         if guess==i:
