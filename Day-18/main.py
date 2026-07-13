@@ -1,16 +1,13 @@
-from turtle import Turtle,Screen
+from turtle import *
 
 
-timmy = Turtle()
-timmy.shape("turtle")
-timmy.color("red")
+shape("turtle")
+color("red")
 for _ in range(4):
-    timmy.forward(100)
-    timmy.right(90)
+    forward(100)
+    right(90)
 
 
 
-
-screen=Screen()
-
-screen.exitonclick()
+    
+exitonclick()
