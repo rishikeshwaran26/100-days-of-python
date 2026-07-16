@@ -3,13 +3,11 @@ from turtle import *
 
 shape("turtle")
 color("red")
-for _ in range(14):
-    forward(10)
-    penup()
-    forward(10)
-    pendown()
 
+speed("fastest")
+for _ in range(36):
+    circle(100)
+    currentheading = heading()
+    setheading(currentheading + 10)
 
-
-    
 exitonclick()
